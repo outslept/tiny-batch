@@ -1,0 +1,36 @@
+{
+  "name": "tiny-batch",
+  "version": "0.0.0",
+  "zshy": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "zshy",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "eslint": "^9.37.0",
+    "neostandard": "^0.12.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "zshy": "^0.4.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  }
+}
