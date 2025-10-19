@@ -7,9 +7,9 @@
     "build": "zshy",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:cov": "vitest run --coverage",
+    "test": "vitest run --reporter=dot",
+    "test:watch": "vitest --reporter=dot",
+    "test:cov": "vitest run --coverage --reporter=dot",
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build"
   },
