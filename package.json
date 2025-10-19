@@ -1,6 +1,10 @@
 {
   "name": "tiny-batch",
   "version": "0.0.1",
+  "description": "Tiny batching utility for concurrent async operations",
+  "keywords": ["batch", "concurrency", "async", "tiny"],
+  "sideEffects": false,
+  "license": "MIT",
   "type": "module",
   "zshy": "src/batch.ts",
   "scripts": {
