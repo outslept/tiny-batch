@@ -3,14 +3,27 @@
   "version": "0.0.1",
   "description": "Tiny batching utility for concurrent async operations",
   "keywords": [
+    "async",
     "batch",
     "concurrency",
-    "async",
     "tiny"
   ],
-  "sideEffects": false,
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "main": "./dist/batch.cjs",
+  "module": "./dist/batch.js",
+  "types": "./dist/batch.d.cts",
+  "exports": {
+    ".": {
+      "types": "./dist/batch.d.cts",
+      "import": "./dist/batch.js",
+      "require": "./dist/batch.cjs"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "fmt": "oxfmt",
@@ -21,7 +34,6 @@
     "test:watch": "vitest --reporter=dot",
     "test:cov": "vitest run --coverage --reporter=dot"
   },
-  "packageManager": "pnpm@11.22.0",
   "devDependencies": {
     "@vitest/coverage-v8": "4.1.11",
     "oxfmt": "^0.64.0",
@@ -29,17 +41,5 @@
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/batch.cjs",
-  "module": "./dist/batch.js",
-  "types": "./dist/batch.d.cts",
-  "exports": {
-    ".": {
-      "types": "./dist/batch.d.cts",
-      "import": "./dist/batch.js",
-      "require": "./dist/batch.cjs"
-    }
-  }
+  "packageManager": "pnpm@11.22.0"
 }
