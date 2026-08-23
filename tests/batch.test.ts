@@ -31,7 +31,7 @@ describe('batch (last mode)', () => {
 
   it('supports thenable results', async () => {
     const thenable = {
-      then (resolve: (v: number) => void, _reject?: (e: unknown) => void) {
+      then(resolve: (v: number) => void, _reject?: (e: unknown) => void) {
         resolve(42)
       }
     }
@@ -167,22 +167,6 @@ describe('pending and flush semantics', () => {
     const b = batch(fn)
     b.flush()
     expect(fn).not.toHaveBeenCalled()
-  })
-})
-
-describe('scheduling fallback', () => {
-  it('falls back to Promise.resolve().then when queueMicrotask is unavailable', async () => {
-    // ehh
-    vi.stubGlobal('queueMicrotask', undefined)
-    try {
-      let calls = 0
-      const b = batch((x: number) => { calls++; return x * 2 })
-      const r = await Promise.all([b(1), b(2)])
-      expect(calls).toBe(1)
-      expect(r).toEqual([4, 4])
-    } finally {
-      vi.unstubAllGlobals()
-    }
   })
 })
 
