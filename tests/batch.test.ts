@@ -35,6 +35,7 @@ describe("batch (last mode)", () => {
 
   it("supports thenable results", async () => {
     const thenable = {
+      // oxlint-disable-next-line unicorn/no-thenable
       then(resolve: (v: number) => void, _reject?: (e: unknown) => void) {
         resolve(42);
       },
