@@ -2,29 +2,32 @@
   "name": "tiny-batch",
   "version": "0.0.1",
   "description": "Tiny batching utility for concurrent async operations",
-  "keywords": ["batch", "concurrency", "async", "tiny"],
+  "keywords": [
+    "batch",
+    "concurrency",
+    "async",
+    "tiny"
+  ],
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
-  "zshy": "src/batch.ts",
   "scripts": {
-    "build": "zshy",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "build": "tsc",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint . --fix",
     "test": "vitest run --reporter=dot",
     "test:watch": "vitest --reporter=dot",
-    "test:cov": "vitest run --coverage --reporter=dot",
-    "prepare": "pnpm run build",
-    "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build"
+    "test:cov": "vitest run --coverage --reporter=dot"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@11.22.0",
   "devDependencies": {
     "@vitest/coverage-v8": "3.2.4",
-    "eslint": "^9.37.0",
-    "neostandard": "^0.12.2",
-    "typescript": "^5.9.3",
-    "vitest": "^3.2.4",
-    "zshy": "^0.4.3"
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
   },
   "files": [
     "dist"
