@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { batch } from "../src/batch.js";
+import { batch } from "../src/index.js";
 
 describe("batch (last mode)", () => {
   it("batches multiple calls into one with last args", async () => {
