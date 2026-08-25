@@ -25,14 +25,11 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check",
+    "build": "tsdown",
     "lint": "oxlint .",
-    "lint:fix": "oxlint . --fix",
-    "test": "vitest run --reporter=dot",
-    "test:watch": "vitest --reporter=dot",
-    "test:cov": "vitest run --coverage --reporter=dot"
+    "fmt": "oxfmt .",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm lint && pnpm test && pnpm build"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "4.1.11",
