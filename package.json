@@ -14,14 +14,11 @@
   ],
   "type": "module",
   "sideEffects": false,
-  "main": "./dist/batch.cjs",
-  "module": "./dist/batch.js",
-  "types": "./dist/batch.d.cts",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/batch.d.cts",
-      "import": "./dist/batch.js",
-      "require": "./dist/batch.cjs"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
     }
   },
   "scripts": {
